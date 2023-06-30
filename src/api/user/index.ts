@@ -13,6 +13,15 @@ import type { LoginData, UserRes } from './types'
  */
 export function login(data: LoginData) {
   return http.post<{ token: string }>('/admin/system/securityLogin/login', data)
+  // return new Promise((resolve) => {
+  //   resolve({
+  //     code: 200,
+  //     message: '登录成功',
+  //     data: {
+  //       token: 'System Token',
+  //     },
+  //   })
+  // })
 }
 
 /**
@@ -20,6 +29,35 @@ export function login(data: LoginData) {
  */
 export function getUserInfo() {
   return http.get<UserRes>('/admin/system/index/info')
+  // return new Promise((resolve) => {
+  //   resolve({
+  //     code: 200,
+  //     message: '',
+  //     data: {
+  //       userId: 1,
+  //       avatar:
+  //         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
+  //       name: 'admin',
+  //       password: '111111',
+  //       desc: '平台管理员',
+  //       roles: ['平台管理员'],
+  //       buttons: ['cuser.detail'],
+  //       routers: [
+  //         {
+  //           path: '/system',
+  //           component: 'Layout',
+  //           meta: {
+  //             title: '系统管理',
+  //             icon: 'Lock',
+  //             isHide: true,
+  //           },
+  //           children: [],
+  //         },
+  //       ],
+  //       token: 'Admin Token',
+  //     },
+  //   })
+  // })
 }
 
 /**
