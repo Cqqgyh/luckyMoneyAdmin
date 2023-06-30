@@ -7,7 +7,7 @@ import { LuckyMoneyActive } from '@/api/luckyMoney/types'
  * @returns {Promise<ResultData<string>>} 红包key
  */
 export function addLuckyMoneyActive(params: LuckyMoneyActive) {
-  return http.post<string>(`/api/add`, params)
+  return http.post<string>(`/api/v2/add`, params)
 }
 
 /**
@@ -15,5 +15,5 @@ export function addLuckyMoneyActive(params: LuckyMoneyActive) {
  * @returns {Promise<ResultData<LuckyMoneyActive[]>>} 红包活动列表
  */
 export function getLuckyMoneyActiveList() {
-  return http.get<LuckyMoneyActive[]>(`/api/list`)
+  return http.get<LuckyMoneyActive[]>(`/api/v2/list`)
 }

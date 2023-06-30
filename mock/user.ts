@@ -8,7 +8,7 @@ function createUserList() {
       userId: 1,
       avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      username: 'admin',
+      name: 'admin',
       password: '111111',
       desc: '平台管理员',
       roles: ['平台管理员'],
@@ -31,7 +31,7 @@ function createUserList() {
       userId: 2,
       avatar:
         'https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif',
-      username: 'system',
+      name: 'system',
       password: '111111',
       desc: '系统管理员',
       roles: ['系统管理员'],
@@ -61,7 +61,7 @@ const mockApiList = [
     response: ({ body }: { body: any }) => {
       const { username, password } = body
       const checkUser = createUserList().find(
-        (item) => item.username === username && item.password === password,
+        (item) => item.name === username && item.password === password,
       )
       if (!checkUser) {
         return resultError('Incorrect username or password！')
